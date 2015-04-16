@@ -34,7 +34,7 @@ public class XavanteChannelHandler
 	{
 		Channel       channel = e.getChannel();
 		SocketAddress addr    = channel.getRemoteAddress();
-		Xavante.logger.info("XavanteChannelHandler {} connected", addr);
+		Xavante.logger.debug("XavanteChannelHandler {} connected", addr);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class XavanteChannelHandler
 	{
 		Channel       channel = e.getChannel();
 		SocketAddress addr    = channel.getRemoteAddress();
-		Xavante.logger.info("XavanteChannelHandler {} disconnected", addr);
+		Xavante.logger.debug("XavanteChannelHandler {} disconnected", addr);
 	}
 
 	@Override
@@ -54,12 +54,12 @@ public class XavanteChannelHandler
 		if(cause instanceof SocketException)
 		{
 			//we get a 'Broken pipe' when the client closes the connection from his end
-			Xavante.logger.info("XavanteChannelHandlerexceptionCaught(): {}", cause.getMessage());
+			Xavante.logger.error("XavanteChannelHandlerexceptionCaught(): {}", cause.getMessage());
 		}
 		else
 		{
 			String trace = ExceptionUtils.getStackTrace(cause);
-			Xavante.logger.info("XavanteChannelHandlerexceptionCaught(): {}", trace);
+			Xavante.logger.error("XavanteChannelHandlerexceptionCaught(): {}", trace);
 		}
 	}
 
@@ -70,7 +70,7 @@ public class XavanteChannelHandler
 		long start = System.currentTimeMillis();
 		doWork(e);
 		long end   = System.currentTimeMillis();
-		Xavante.logger.info("XavanteChannelHandler done in {} ms", end - start);
+		Xavante.logger.debug("XavanteChannelHandler done in {} ms", end - start);
 	}
 
 	private void doWork(MessageEvent e)
