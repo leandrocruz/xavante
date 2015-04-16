@@ -6,9 +6,16 @@
 				class="xavante.Xavante"
 				name="Xavante HTTP Server"
 				address="0.0.0.0"
-				port="8887"/>
+				port="8081"/>
 
-	<component 	role="xingu.codec.Codec"
+	<component 	key="xavante"
+				role="xingu.codec.Codec"
 				class="xingu.codec.impl.flexjson.FlexJsonCodec" />
 
+	<component	role="xavante.dispatcher.RequestDispatcher"
+				class="xavante.dispatcher.impl.RequestDispatcherImpl">
+		<handlers>
+			<handler path="/api/lp" class="xavante.dispatcher.handler.LongPollingCometHandler"/>
+		</handlers>
+	</component>
 </pulga>
