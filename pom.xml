@@ -14,8 +14,18 @@
 	<name>Json Command Executor Server for The Web</name>
 	<dependencies>
 		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.9</version>
+		</dependency>
+		<dependency>
 			<groupId>xingu</groupId>
 			<artifactId>xingu-node-server</artifactId>
+			<version>${xingu}</version>
+		</dependency>
+		<dependency>
+			<groupId>xingu</groupId>
+			<artifactId>codec-flexjson</artifactId>
 			<version>${xingu}</version>
 		</dependency>
 	</dependencies>
