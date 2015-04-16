@@ -47,9 +47,9 @@ var onConnect = function(response, buffer) {
 		var session = reply.sessionId;
 		var data    = JSON.stringify({'class': 'xavante.Reverse', 'value': 'sample value'});
 
-		var       op = clone(options);
-		op.method    = 'POST';
-		op.path      = base + '/snd/' + session + '/' + (++count);
+		var    op = clone(options);
+		op.method = 'POST';
+		op.path   = base + '/snd/' + session + '/' + (++count);
 
 		var req = http.request(op, process(onSend));
 		req.write(data);
