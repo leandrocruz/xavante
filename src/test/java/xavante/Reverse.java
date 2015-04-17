@@ -8,7 +8,7 @@ import xingu.node.commons.signal.behavior.SignalBehavior;
 import xingu.node.commons.signal.impl.SignalSupport;
 
 public class Reverse
-	extends SignalSupport
+	extends SignalSupport<Long>
 	implements SignalBehavior<Reverse>
 {
 	private String value;
