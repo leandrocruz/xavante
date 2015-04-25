@@ -193,14 +193,14 @@ public abstract class CometHandlerSupport
 		CometSession session = sessions.byId(hash);
 		if(session == null)
 		{
-			return "{\"session_missing\":true, \"message\":\"session "+hash+" not found\"}";
+			return "{\"session_error\":true, \"message\":\"session "+hash+" not found\"}";
 		}
 
 		Object[] messages = session.drain();
 		if(messages == null)
 		{
 			// Thread interrupted
-			return null;
+			return "{\"session_error\":true, \"message\":\"no messages\"}";
 		}
 
 		StringBuffer sb = toString(messages);
