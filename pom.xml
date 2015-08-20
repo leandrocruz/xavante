@@ -9,7 +9,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>xavante</groupId>
 	<artifactId>xavante</artifactId>
-	<version>1.6.3</version>
+	<version>1.6.4</version>
 	<packaging>jar</packaging>
 	<name>Json Command Executor Server for The Web</name>
 	<dependencies>
@@ -30,6 +30,6 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<xingu>1.6.3</xingu>
+		<xingu>1.6.4</xingu>
 	</properties>
 </project>
