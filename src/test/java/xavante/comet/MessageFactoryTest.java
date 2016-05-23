@@ -102,13 +102,15 @@ public class MessageFactoryTest
 	{
 		HttpRequest  req     = mock(HttpRequest.class);
 		HttpResponse resp    = mock(HttpResponse.class);
+		HttpHeaders  headers = mock(HttpHeaders.class);
 		Channel      channel = mock(Channel.class);
 		
 		String token = RandomStringUtils.randomAlphanumeric(MessageFactoryImpl.ID_LEN);
 		when(req.getUri()).thenReturn("/aaa/" + token + "/1");
 		
 		String charset = "utf-8";
-		when(req.getHeader(HttpHeaders.Names.CONTENT_TYPE)).thenReturn("application/x-www-form-urlencoded; charset=" + charset);
+		when(req.headers()).thenReturn(headers);
+		when(headers.get(HttpHeaders.Names.CONTENT_TYPE)).thenReturn("application/x-www-form-urlencoded; charset=" + charset);
 		
 		String payload = "Léandro Çruz";
 		String encoded = URLEncoder.encode(payload, charset);

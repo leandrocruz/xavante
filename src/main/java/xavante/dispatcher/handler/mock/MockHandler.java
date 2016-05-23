@@ -130,7 +130,7 @@ public class MockHandler
 		NameValue[] headers = res.getHeaders();
 		for(NameValue header : headers)
 		{
-			result.addHeader(header.getName(), header.getValue());
+			result.headers().add(header.getName(), header.getValue());
 		}
 
 		InputStream raw = res.getRawBody();

@@ -134,8 +134,9 @@ public class XavanteChannelHandler
 		}
 
 		HttpRequest res        = HttpRequest.class.cast(msg);
-		String      connection = res.getHeader(HttpHeaders.Names.CONNECTION);
-		String      upgrade    = res.getHeader(HttpHeaders.Names.UPGRADE);
+		HttpHeaders headers    = res.headers();
+		String      connection = headers.get(HttpHeaders.Names.CONNECTION);
+		String      upgrade    = headers.get(HttpHeaders.Names.UPGRADE);
 		return HttpHeaders.Values.WEBSOCKET.equalsIgnoreCase(upgrade) && HttpHeaders.Values.UPGRADE.equalsIgnoreCase(connection);
 	}
 }

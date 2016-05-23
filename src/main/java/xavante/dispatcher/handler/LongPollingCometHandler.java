@@ -61,8 +61,9 @@ public class LongPollingCometHandler
 			{
 				byte[]        bytes  = reply.getBytes();
 				ChannelBuffer buffer = ChannelBuffers.wrappedBuffer(bytes);
-				resp.setHeader(HttpHeaders.Names.CONTENT_LENGTH, bytes.length);
-				resp.addHeader(HttpHeaders.Names.CONTENT_TYPE, "application/json");
+				final HttpHeaders headers = resp.headers();
+				headers.set(HttpHeaders.Names.CONTENT_LENGTH, bytes.length);
+				headers.add(HttpHeaders.Names.CONTENT_TYPE, "application/json");
 				resp.setContent(buffer);
 			}
 		}

@@ -105,7 +105,7 @@ public class DefaultRequestHandler
 				.withContent(content)
 				.build();
 
-		String conn = request.getHeader(HttpHeaders.Names.CONNECTION);
+		String conn = request.headers().get(HttpHeaders.Names.CONNECTION);
 		ChannelFuture future = xeq.write(res);
 		if(HttpHeaders.Values.CLOSE.equalsIgnoreCase(conn))
 		{

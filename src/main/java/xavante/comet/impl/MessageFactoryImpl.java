@@ -93,7 +93,7 @@ public class MessageFactoryImpl
 				}
 				else
 				{
-					String  cType        = req.getHeader(HttpHeaders.Names.CONTENT_TYPE);
+					String  cType        = req.headers().get(HttpHeaders.Names.CONTENT_TYPE);
 					String  csName       = HttpUtils.charset(cType, HttpUtils.DEFAULT_HTTP_CHARSET_NAME);
 					Charset charset      = Charset.forName(csName);
 					String  data         = buffer.toString(charset);
