@@ -30,6 +30,6 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<xingu>1.9-SNAPSHOT</xingu>
+		<xingu>1.9</xingu>
 	</properties>
 </project>
