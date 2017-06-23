@@ -45,13 +45,13 @@ public class SessionManagerImpl
 	}
 
 	@Override
-	public CometSession byId(String sessionId)
+	public synchronized CometSession byId(String sessionId)
 	{
 		return sessionById.get(sessionId);
 	}
 
 	@Override
-	public CometSession newSession()
+	public synchronized CometSession newSession()
 	{
 		String       id      = nextId();
 		CometSession session = new CometSession(id);
@@ -66,7 +66,7 @@ public class SessionManagerImpl
 	}
 
 	@Override
-	public void setOwner(String sessionId, Identity<?> identity)
+	public synchronized void setOwner(String sessionId, Identity<?> identity)
 	{
 		CometSession session = byId(sessionId);
 		session.setIdentity(identity);
