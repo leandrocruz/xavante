@@ -42,6 +42,8 @@ public abstract class CometHandlerSupport
 		throws Exception
 	{
 		String cmd = msg.getCommand();
+		logger.debug("Received command:{}, sequence:{}, token:{} command", cmd, msg.getSequence(), msg.getToken());
+		logger.debug("{}", msg.getData());
 		if("con".equalsIgnoreCase(cmd))
 		{
 			return connect(msg);

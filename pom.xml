@@ -30,6 +30,12 @@
 		</dependency>
 	</dependencies>
 	<properties>
+<<<<<<< HEAD
 		<xingu>3.0-SNAPSHOT</xingu>
+||||||| merged common ancestors
+		<xingu>2.2-SNAPSHOT</xingu>
+=======
+		<xingu>2.3-SNAPSHOT</xingu>
+>>>>>>> origin/master
 	</properties>
 </project>
