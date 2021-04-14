@@ -30,6 +30,6 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<xingu>2.3.4</xingu>
+		<xingu>2.3.5</xingu>
 	</properties>
 </project>
