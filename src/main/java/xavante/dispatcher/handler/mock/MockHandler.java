@@ -94,8 +94,7 @@ public class MockHandler
 		}
 		
 		File         file = new File(root, to);
-		InputStream  is   = new FileInputStream(file);
-		HttpResponse res  = CurlResponseParser.responseFrom("", is);
+		HttpResponse res  = CurlResponseParser.responseFrom("", file, File.createTempFile("headers-", ".tmp"));
 		return new ReponseBuilderImpl(path, map, res);
 	}
 
