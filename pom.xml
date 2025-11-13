@@ -9,7 +9,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>xavante</groupId>
 	<artifactId>xavante</artifactId>
-	<version>2.3.10</version>
+	<version>2.3.11</version>
 	<packaging>jar</packaging>
 	<name>Json Command Executor Server for The Web</name>
 	<dependencies>
@@ -30,6 +30,12 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<xingu>2.3.12</xingu>
+		<xingu>2.3.14</xingu>
 	</properties>
+        <distributionManagement>
+                <repository>
+                        <id>artifact-registry</id>
+                        <url>https://southamerica-east1-maven.pkg.dev/oystr-cloud-test/xavante</url>
+                </repository>
+        </distributionManagement>
 </project>
